@@ -11,6 +11,7 @@ class CourseRegistrationForm(forms.ModelForm):
             "course_code":forms.TextInput(attrs = {'class':"forms-counter",'style':"width:90%"}),
             "course_description":forms.TextInput(attrs = {'class':"forms-counter",'style':"width:90%"}),
             "notes":forms.FileInput(attrs = {'class':"forms-counter",'style':"width:90%"}),
-            "course_structure":forms.FileInput(attrs = {'class':"forms-counter",'style':"width:90%"})
+            "course_structure":forms.FileInput(attrs = {'class':"forms-counter",'style':"width:90%"}),
+            "course_icon":forms.FileInput(attrs={'class':"form-control",'style':"width:90%"}),
 
         }
