@@ -1,0 +1,135 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="main">
+        <div class="mainSub">
+            <center>
+                <h1 id="heading">AkiraChix School System</h1>
+            </center>
+            <div class="mainContent">
+                <div class="content2">
+                    <h3 id="motto">She Builds, She Leads, She Serves</h3>
+                    <div class="smallContainer">
+                        <div class="cont1">
+                            <a href="{% url 'registerStudent' %}"> <button class="btnReg">Register as Student</button ></a>
+                                <a href="{% url 'registerTrainer' %}"><button class="btnReg">Register as Trainer</button ></a>
+
+                            
+                        </div>
+                        <div class="cont2">
+                            <a href="{% url 'staffRegister' %}"><button class="btnReg">Register as Stuff</button > </a>
+                            <a href="{% url 'staffRegister' %}"><button class="btnReg">View Dashboard</button></a>
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <style>
+        #heading {
+            margin-left: 400px;
+            font-size: 45px;
+            color: #652792;
+            box-shadow: 4px 4px 2px 5px rgba(236, 220, 220, 0.781);
+        }
+        
+        .mainSub {
+            z-index: 9999;
+            position: absolute;
+        }
+        
+        .main {
+            background-image: url('{% static "landing.jpg" %}');
+            color: white;
+            height: 650px;
+            padding: 10px 0 0 0;
+            position: relative;
+            font-family: serif;
+        }
+        
+        .main:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, .5);
+        }
+        
+        .btnReg {
+            font-weight: 200;
+            border: 1px solid rgb(87, 83, 83);
+            padding: 15px 0px;
+            margin-left: 5px;
+            width: 130px;
+            align-items: center;
+            font-family: serif;
+            color: rgb(113, 55, 146);
+            font-weight: 800;
+        }
+        
+        .btnReg:hover {
+            background-color: #652792;
+            color: wheat;
+        }
+        
+        #btn-_start {
+            background-color: #e4dde9;
+            padding: 5px 10px;
+            box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.007);
+            color: #652792;
+            margin-left: 20%;
+            font-weight: 1000;
+            border-radius: 5px;
+        }
+        
+        #motto {
+            color: rgb(189, 182, 196);
+            font-weight: 1000;
+            font-size: 37px;
+        }
+        
+        .mainContent {
+            display: flex;
+        }
+        
+        .smallContainer {
+            display: flex;
+            margin-left: 30px;
+        }
+        
+        .content2 {
+            margin-top: 15%;
+            margin-left: 20px;
+        }
+        
+        .main {
+            background-size: cover;
+            height: 98vh;
+            top: 0;
+            left: 0;
+            right: 0;
+            position: absolute;
+        }
+    </style>
+</body>
+
+</html>

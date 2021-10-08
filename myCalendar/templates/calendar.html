@@ -1,0 +1,24 @@
+{% include 'base.html'%}{% load static %} {% load bootstrap3 %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" type="text/css" /> {% block styles %} {% bootstrap_css %} {% endblock %}
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    {'% block content %}
+    <div class="clearfix">
+        <a class="btn btn-info left" href="{% url 'myCalendar:calendar' %}?{'{ prev_month }}"> Previous Month </a>
+        <a class="btn btn-info left" href="{% url 'myCalendar:newEvent' %}"> Add Event </a>
+        <a class="btn btn-info right" href="{% url 'myCalendar:calendar' %}?{'{ next_month }}"> Next Month </a>
+    </div>
+    {{ calendar }} {'% endblock %}
+</body>
+
+</html>

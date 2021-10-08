@@ -1,0 +1,297 @@
+/* Forms styling */
+
+* {
+    font-family: serif;
+    font-size: 15px;
+}
+
+.myContainer {
+    background-color: white;
+    box-shadow: 15px rgb(236, 230, 236);
+    margin-left: 30%;
+    margin-right: 20%;
+}
+
+.myForm {
+    padding: 0px 16%;
+    font-family: serif;
+}
+
+label input {
+    display: flex;
+}
+
+input {
+    padding: 2px 100px;
+    display: flex;
+}
+
+#btn-register {
+    background-color: rgba(98, 4, 110, 0.925);
+    color: white;
+    margin: 5% 40%;
+    padding: 6px 20px;
+}
+
+#btn-register2 {
+    background-color: rgba(98, 4, 110, 0.925);
+    color: white;
+    margin-top: 5%;
+    padding: 6px 15px;
+    margin-left: 390%;
+    font-size: 12px;
+}
+
+#btn-register :hover {
+    background-color: azure;
+    color: rgb(80, 24, 145);
+}
+
+#form-title {
+    margin-left: 40%;
+    color: blueviolet;
+    font-family: serif;
+}
+
+
+/* Side navbar styling */
+
+.sidebar {
+    width: 200px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 999;
+    color: #fff;
+    transition: all 0.3s;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+nav a {
+    color: rgb(248, 244, 244);
+    text-decoration: none;
+    font-size: 10px;
+    padding-top: 2%;
+}
+
+.navigation .navbar-brand {
+    margin-left: 10%;
+}
+
+#logo {
+    margin-right: -300px;
+}
+
+
+/* Courses App Styling */
+
+.courses_body {
+    background-color: rgb(197, 154, 199);
+    margin: 0% 20%;
+}
+
+.courses .card {
+    width: 200px;
+}
+
+.card-deck {
+    justify-content: space-around;
+}
+
+.courses .card-body {
+    margin: 0px 20px;
+    width: 280px;
+    /* -webkit-transition: -webkit-transform 1s ease-in-out;
+    transition: transform 2s ease-in-out; */
+    background-color: rgb(171, 63, 214);
+    height: 180px;
+    border-radius: 20px;
+}
+
+.courses .card-body:hover {
+    background-color: rgb(236, 232, 232);
+}
+
+.courses .card-body:hover #btn_course {
+    background-color: rgb(127, 34, 189);
+}
+
+#card-title {
+    margin: 0px 30px;
+    color: blueviolet;
+}
+
+.card-deck {
+    display: flex;
+}
+
+.courses {
+    position: absolute;
+    margin-left: 15%;
+    margin-top: 10%;
+}
+
+.courses {
+    position: absolute;
+    margin-left: 15%;
+    margin-top: 5%;
+}
+
+.courses2 {
+    margin-left: 15%;
+    position: absolute;
+    margin-top: 18%
+}
+
+#courses-title {
+    margin-left: 15%;
+}
+
+.card {
+    background-color: aquamarine;
+}
+
+#btn_course {
+    padding: 2% 10%;
+    background-color: rgb(168, 186, 202);
+    border-radius: 5px;
+    margin: 3% 20%;
+}
+
+.stulist {
+    background-color: antiquewhite;
+}
+
+.mybody {
+    background-color: antiquewhite;
+}
+
+table {
+    margin-left: 13%;
+    width: 40vw;
+    color: rgb(94, 88, 88);
+}
+
+#form-heading {
+    color: blueviolet;
+    margin-bottom: 10%;
+    font-size: 40px;
+    text-align: center;
+}
+
+#profile-img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50px;
+}
+
+.form-header {
+    display: flex;
+}
+
+
+/* calendar css */
+
+.calendar {
+    width: 80%;
+    margin-left: 16%;
+    font-size: 13px;
+}
+
+.calendar tr,
+.calendar td {
+    border: 1px solid rgb(143, 8, 177);
+}
+
+.calendar th {
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.calendar td {
+    width: 100px;
+    height: 70px;
+    padding: 20px 0px 70px 5px;
+}
+
+.month {
+    font-size: 25px;
+}
+
+.date {
+    font-size: 16px;
+}
+
+ul {
+    height: 100%;
+    padding: 0px 5px 0px 20px;
+}
+
+a {
+    color: #17a2b8;
+}
+
+#btn-createEvent {
+    background-color: rgb(96, 11, 122);
+    color: wheat;
+    border-radius: 30px;
+    padding: 5px 30px;
+}
+
+.left {
+    margin-left: 20%;
+    background-color: rgb(96, 11, 122);
+}
+
+.right {
+    float: right;
+    background-color: rgb(96, 11, 122);
+}
+
+.btn {
+    outline: none;
+    color: black;
+    background-color: transparent;
+    box-shadow: 0 0 0 0;
+}
+
+.clearfix {
+    margin: 15px;
+}
+
+
+/* dashboard */
+
+
+/* Charts Style  */
+
+.fm-charts-color-1 {
+    fill: #ffa600 !important;
+}
+
+.fm-charts-color-2 {
+    fill: #7eae26 !important;
+}
+
+.fm-charts-color-3 {
+    fill: #00a45a !important;
+}
+
+.fm-charts-color-4 {
+    fill: #df3800 !important;
+}
+
+.fm-charts-color-5 {
+    fill: #e95800 !important;
+}
+
+.fm-charts-color-6 {
+    fill: #ffa600 !important;
+}
+
+
+/* #trainer-card {
+    margin-left: 30%;
+} */

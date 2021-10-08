@@ -1,0 +1,62 @@
+{% include 'base.html'%}{% load static %} {% load bootstrap3 %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous"> {% block styles %} {% bootstrap_css %} {% endblock %}
+
+</head>
+
+<body class="stulist">
+    <h1 id="form-title">COURSE</h1>
+    <table class="table table-danger table-hover">
+        <thead class="table">
+            <tr>
+                <th scope="col ">Course Name</th>
+                <th scope="col ">Trainer</th>
+                <th scope="col ">Course Code</th>
+                <th scope="col ">Course Description</th>
+                <th scope="col ">Notes</th>
+                <th scope="col ">Course Structure</th>
+
+
+
+
+
+            </tr>
+        </thead>
+
+        {% for course in courses %}
+        <tr>
+            <td>{{course.course_name}}</td>
+            <td>{{course.course_trainer}}</td>
+            <td>{{course.course_code}}</td>
+            <td>{{course.course_description}}</td>
+            <td>{{course.notes}}</td>
+            <td>{{course.course_structure}}</td>
+
+        </tr>
+        {% endfor %}
+    </table>
+
+    <div class="services container">
+        <div class="service-top">
+            <h1 class="section-title">About <span>Us</span></h1>
+            <p style="font-size: 18px;">AkiraChix codeHive is the AkiraChix signature program. It is a one-year fully subsidized residential hands-on technical training program. In 2022 we intend to recruit highly motivated young women from across Kenya, Rwanda, South Sudan, Tanzania
+                and Uganda’s underserved communities. And offer market-ready technology, life skills and leadership training. It provides education and economic opportunity to young women between 19 and 24 years from socio-economically disadvantaged backgrounds
+                who have completed high school education, unable to further their education due to financial constraints. </p>
+        </div>
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js "></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js " integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp " crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js " integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/ " crossorigin="anonymous "></script>
+
+</body>
+
+</html>
