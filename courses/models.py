@@ -11,4 +11,4 @@ class Course(models.Model):
     course_description = models.TextField(max_length=200)
     notes = models.FileField(upload_to="Documents")
     course_structure = models.FileField(upload_to="Documents")
-    course_icon = CloudinaryField(upload_to="images/",null=True,blank=True)
+    course_icon = CloudinaryField(null=True,blank=True)
