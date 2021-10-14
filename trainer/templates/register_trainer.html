@@ -17,7 +17,7 @@
         <div class="myForm">
             <center> <img src={% static "trainer-removebg-preview.png" %} style="height: 30vh;"></center>
 
-            <h1 id="form-heading">Staff registration Form</h1>
+            <h1 id="form-heading">Trainer registration Form</h1>
             <form method="POST" enctype="multipart/form-data">
                 <!-- template variable as means as paragraph -->
                 {% csrf_token %} {{form.as_p}}
