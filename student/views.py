@@ -42,7 +42,7 @@ def student_profile(request,id):
 
 
 #delete a student
-def delete_student(id):
+def delete_student(request,id):
     student = Student.objects.get(id=id)
     student.delete()
     return redirect("student_list")
