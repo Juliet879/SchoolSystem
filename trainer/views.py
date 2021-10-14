@@ -32,7 +32,12 @@ def trainer_profile(request,id):
     trainer = Trainer.objects.get(id=id)
     return render(request,"trainer_profile.html",{"trainer":trainer})
 
-def delete_trainer(id):
-    trainer = Trainer.objects.get(id=id)
-    trainer.delete()
-    return redirect("trainer_list")
+
+def delete_trainer(request,id):
+    try:
+        trainer = Trainer.objects.get(id=id)
+        trainer.delete()
+    except Trainer.DoesNotExist:
+        trainer = None
+
+    return redirect(trainer_list)

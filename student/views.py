@@ -43,9 +43,15 @@ def student_profile(request,id):
 
 #delete a student
 def delete_student(request,id):
-    student = Student.objects.get(id=id)
-    student.delete()
-    return redirect("student_list")
+    try:
+        student = Student.objects.get(id=id)
+        student.delete()
+        
+    except Student.DoesNotExist:
+        student = None
+
+    return redirect(student_list)
+
 
 
 # def dashboard_pivot(request):

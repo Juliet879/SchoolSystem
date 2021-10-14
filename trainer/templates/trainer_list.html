@@ -47,6 +47,7 @@
                         <h5 class="card-title ">{{trainer.first_name}} {{trainer.second_name}} <a href="{% url 'editTrainer' id=trainer.id %}">Edit</a></h5>
                         <p class="card-text ">{{trainer.company}}</p>
                         <a href="{% url 'trainerProfile' id=trainer.id %}" class="btn-train">View Profile</a>
+                        <a href="{% url 'deleteTrainer' id=trainer.id %}">Delete</a>
                     </center>
                 </div>
             </div>

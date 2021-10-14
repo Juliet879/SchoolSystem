@@ -32,7 +32,11 @@ def staff_profile(request,id):
     staff = Staff.objects.get(id=id)
     return render(request,"staff_profile.html",{"staff":staff})
 
-def delete_staff(id):
-    staff = Staff.objects.get(id=id)
-    staff.delete()
-    return redirect("staff_list")
+def delete_staff(request,id):
+    try:
+        staff = Staff.objects.get(id=id)
+        staff.delete()
+    except Staff.DoesNotExist:
+        staff = None
+
+    return redirect(staff_list)

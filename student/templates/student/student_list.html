@@ -44,13 +44,8 @@
             <td>{{student.class_name}}</td>
             <td>{{student.email}}</td>
             <td><a href="{% url 'profile' id=student.id %}">Profile</a></td>
-            <td>
-                <a href="{% url 'deleteStudent' id=student.id %}">Del</a>
-            </td>
-            <td>
-                <a href="{% url 'editStudent' id=student.id %}">Edit
-                </a>
-            </td>
+            <td><a href="{% url 'deleteStudent' id=student.id %}">Del</a></td>
+            <td><a href="{% url 'editStudent' id=student.id %}">Edit</a></td>
 
         </tr>
         {% endfor %}
