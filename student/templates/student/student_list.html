@@ -50,8 +50,10 @@
             <td>
                 <a href="{% url 'deleteStudent' id=student.id %}"> <i class="fa fa-trash" aria-hidden="true"></i></a>
             </td>
-            <td><a href="{% url 'editStudent' id=student.id %}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-            </a></td>
+            <td>
+                <a href="{% url 'editStudent' id=student.id %}">Edit
+                </a>
+            </td>
 
         </tr>
         {% endfor %}
