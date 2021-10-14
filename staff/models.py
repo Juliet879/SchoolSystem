@@ -1,4 +1,6 @@
 from django.db import models
+from cloudinary.models import CloudinaryField
+
 
 # Create your models here.
 class Staff(models.Model):
@@ -18,4 +20,4 @@ class Staff(models.Model):
     city = models.CharField(max_length=12)
     resume = models.FileField(upload_to="documents/")
     contract = models.FileField(upload_to="documents/")
-    profile_image = models.ImageField(upload_to ="images/",null=True,blank=True)
+    profile_image = CloudinaryField(null=True,blank=True)
