@@ -15,6 +15,9 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+import cloudinary
+import cloudinary_storage
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -53,6 +56,8 @@ INSTALLED_APPS = [
     'staff',
     'rest_framework',
     'django_heroku',
+    'cloudinary',
+    'cloudinary_storage',
 
 ]
 
@@ -163,6 +168,14 @@ MEDIA_URL = '/media/'
 
 
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': config('CLOUD_NAME', default=""),
+    'API_KEY': config('API_KEY', default=""),
+    'API_SECRET': config('API_SECRET', default=""),
+}
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 # STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
