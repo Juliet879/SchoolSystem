@@ -22,18 +22,15 @@
     <table class="table table-secondary table-hover ">
         <thead class="table">
             <tr>
-
-                <th scope="col " style="width: 4%;"></th>
-
+                <th sope="col " style="width: 4%;"></th>
                 <th scope="col ">Name</th>
                 <th scope="col ">D.o.b</th>
                 <th scope="col ">Nationality</th>
                 <th scope="col ">Class Name</th>
                 <th scope="col ">Email</th>
                 <th scope="col ">Profile</th>
-                <th scope="col "><i class="fa fa-trash" aria-hidden="true"></i></th>
+                <th scope="col ">Delete</th>
                 <th scope="col ">Edit</th>
-
             </tr>
         </thead>
 
@@ -48,7 +45,7 @@
             <td>{{student.email}}</td>
             <td><a href="{% url 'profile' id=student.id %}">Profile</a></td>
             <td>
-                <a href="{% url 'deleteStudent' id=student.id %}"> <i class="fa fa-trash" aria-hidden="true"></i></a>
+                <a href="{% url 'deleteStudent' id=student.id %}">Del</a>
             </td>
             <td>
                 <a href="{% url 'editStudent' id=student.id %}">Edit
