@@ -1,5 +1,6 @@
 from django.db import models
 import datetime
+from cloudinary.models import CloudinaryField
 # from phonenumber_fields.modelfields import PhoneNumberField
 
 # Create your models here.
@@ -27,7 +28,7 @@ class Student(models.Model):
     medical_report = models.FileField(upload_to="documents/")
     guardian_name = models.CharField(max_length=25)
     # guardian_contact = models.
-    profile_image = models.ImageField(upload_to ="images/",null=True,blank=True)
+    profile_image = CloudinaryField(null=True,blank=True)
     
     
     def full_name(self):

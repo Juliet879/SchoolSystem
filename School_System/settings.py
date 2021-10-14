@@ -17,6 +17,8 @@ from pathlib import Path
 import os
 import cloudinary
 import cloudinary_storage
+import cloudinary.uploader
+import cloudinary.api
 from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -169,13 +171,13 @@ MEDIA_URL = '/media/'
 
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': config('CLOUD_NAME', default=""),
-    'API_KEY': config('API_KEY', default=""),
-    'API_SECRET': config('API_SECRET', default=""),
-}
+cloudinary.config( 
+  cloud_name = "akirachix", 
+  api_key = "891727279737374", 
+  api_secret = "2c7Wvybd6LgQky3-5yinLAkb7II",
+)
 
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+# DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 # STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
