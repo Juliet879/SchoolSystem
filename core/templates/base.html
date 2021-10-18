@@ -16,61 +16,62 @@
 
     <nav class="sidebar">
         <img id="logo" src={% static "akirachix_logo-removebg-preview.png" %} style="height: 20vh; width: 13vw; ">
+        <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+            <span id="">Hello, {{request.user}}</span>
 
-        <div class="container-fluid navigation">
-            <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
-
-                <ul class="navbar-nav">
-                    <li> <a class="navbar-brand" href="{% url 'dashboard' %}">Dashboard</a><br>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="navbar-brand" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <ul class="navbar-nav">
+                <li> <a class="navbar-brand" href="{% url 'dashboard' %}">Dashboard</a><br>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="navbar-brand" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                          Student
                       </a>
-                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink" id="dropdown">
-                            <li><a class="shortlinks" href="{%url 'registerStudent'%}">Register Student</a></li>
-                            <li><a class="shortlinks" href="{%url 'viewStudents'%}"> View Students</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="navbar-brand " href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink" id="dropdown">
+                        <li><a class="shortlinks" href="{%url 'registerStudent'%}">Register Student</a></li>
+                        <li><a class="shortlinks" href="{%url 'viewStudents'%}"> View Students</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="navbar-brand " href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                           Trainer
                           </a>
-                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink" id="dropdown">
-                            <li><a class="shortlinks" href="{%url 'registerTrainer'%}">Register Trainer</a></li>
-                            <li><a class="shortlinks" href="{%url 'trainerList'%}"> View Trainers</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="navbar-brand" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink" id="dropdown">
+                        <li><a class="shortlinks" href="{%url 'registerTrainer'%}">Register Trainer</a></li>
+                        <li><a class="shortlinks" href="{%url 'trainerList'%}"> View Trainers</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="navbar-brand" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       Courses
                   </a>
-                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink" id="dropdown">
-                            <li><a class="shortlinks" href="{%url 'add_course'%}">Register Course</a></li>
-                            <li><a class="shortlinks" href="{%url 'view_courses'%}">View Course</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="navbar-brand" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink" id="dropdown">
+                        <li><a class="shortlinks" href="{%url 'add_course'%}">Register Course</a></li>
+                        <li><a class="shortlinks" href="{%url 'view_courses'%}">View Course</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="navbar-brand" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                        Calendar
                   </a>
-                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink" id="dropdown">
-                            <li><a class="shortlinks" href="{%url 'myCalendar:newEvent'%}"> Add Event</a></li>
-                            <li><a class="shortlinks" href="{%url 'myCalendar:calendar'%}"> View Event</a></li>
-                        </ul>
-                    </li>
+                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink" id="dropdown">
+                        <li><a class="shortlinks" href="{%url 'myCalendar:newEvent'%}"> Add Event</a></li>
+                        <li><a class="shortlinks" href="{%url 'myCalendar:calendar'%}"> View Event</a></li>
+                    </ul>
+                </li>
 
-                    <li class="nav-item dropdown">
-                        <a class="navbar-brand" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <li class="nav-item dropdown">
+                    <a class="navbar-brand" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                        Staff
                   </a>
-                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink" id="dropdown">
-                            <li><a class="shortlinks" href="{%url 'staffRegister'%}"> Add Event</a></li>
-                            <li><a class="shortlinks" href="{%url 'staffList'%}"> View Events</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
+                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink" id="dropdown">
+                        <li><a class="shortlinks" href="{%url 'staffRegister'%}"> Add Event</a></li>
+                        <li><a class="shortlinks" href="{%url 'staffList'%}"> View Events</a></li>
+                    </ul>
+                </li>
+                <li> <a class="navbar-brand" href="{% url 'logout' %}">LogOut</a><br>
+                </li>
+            </ul>
+        </div>
         </div>
     </nav>
     {% block scripts %}

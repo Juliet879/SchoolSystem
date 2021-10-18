@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="login">
+        <div class="above">
+            <form method="POST" action="" enctype="multipart/form-data">
+                {% csrf_token %}
+                <section class="h-100 bg-dark">
+                    <center>
+                        <h3 id="header">Login</h3>
+                    </center>
+                    <label for="username">Username</label><br>
+                    <input type="text" placeholder="Username" name="username" required><br><br>
+                    <label for="password">Password</label><br>
+                    <input type="password" placeholder="Password" name="password" required><br><br>
+                    <a href="page2.html"><button id="btn_signup" type="submit">Login</button></a>
+                    <p>{{form.errors}}</p>
+                    <p id="registerOption">Don't have an account <a id="linking" href="{% url 'register' %}">Register</a></p>
+
+                </section>
+
+            </form>
+        </div>
+    </div>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
+        * {
+            margin-top: 0;
+            font-family: 'EB Garamond', serif;
+        }
+        
+        body {
+            background-color: rgb(255, 255, 255);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        #header {
+            color: white;
+            font-size: 24px;
+        }
+        
+        #heading {
+            margin-left: 23%;
+            color: rgb(78, 18, 173);
+            padding-bottom: 10%;
+            font-size: 30px;
+        }
+        
+        .login {
+            box-shadow: 10px 10px 25px 20px rgb(192, 171, 171);
+            margin: auto;
+            margin-left: 35%;
+            margin-top: 4%;
+            border: 1px solid white;
+            width: 380px;
+            height: 400px;
+            padding-left: 6%;
+            padding-top: 2%;
+            background-color: rgb(81, 50, 102);
+            position: relative;
+        }
+        
+        input {
+            padding: 12px 70px;
+        }
+        
+        label {
+            color: white;
+        }
+        
+        #btn_signup {
+            margin: 20px 60px;
+            padding: 15px 50px;
+            border-radius: 5px;
+            background-color: rgb(141, 125, 172);
+            color: rgb(70, 0, 128);
+        }
+        
+        .above {
+            display: flex;
+        }
+        
+        #logo {
+            width: 70px;
+            height: 70px;
+            position: absolute;
+            left: 5px;
+            top: 5px;
+            border-radius: 100px;
+        }
+        
+        #registerOption {
+            padding: 10px 30px;
+            color: wheat;
+        }
+        
+        #linking {
+            color: rgb(21, 168, 148);
+        }
+    </style>
+</body>
+
+</html>

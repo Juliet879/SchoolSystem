@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from student.models import Student
 from trainer.models import Trainer
 from courses.models import Course
@@ -18,6 +18,8 @@ from staff.models import Staff
 
 
 def home(request):
+# Authentication
+    # if request.user.is_authenticated:
     students = Student.objects.count()
     trainers = Trainer.objects.count()    
     staffs = Staff.objects.count()
@@ -25,3 +27,6 @@ def home(request):
 
     data = {"students":students,"trainers":trainers,"courses":courses,"staffs":staffs}
     return render(request,"dashboard.html",data)
+
+    # else:
+    #     return redirect("auth_login")
