@@ -18,10 +18,12 @@
         <img id="logo" src={% static "akirachix_logo-removebg-preview.png" %} style="height: 20vh; width: 13vw; ">
         <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
             <span id="">Hello, {{request.user}}</span>
-
             <ul class="navbar-nav">
+
+                {% if result.user.is_staff %}
                 <li> <a class="navbar-brand" href="{% url 'dashboard' %}">Dashboard</a><br>
                 </li>
+                {% endif %}
                 <li class="nav-item dropdown">
                     <a class="navbar-brand" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                          Student

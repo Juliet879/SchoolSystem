@@ -3,6 +3,7 @@ from student.models import Student
 from trainer.models import Trainer
 from courses.models import Course
 from staff.models import Staff
+from landing.decorators import allowed_users
 # from .models import Order
 # from django.http import JsonResponse
 # from django.core import serializers
@@ -16,7 +17,7 @@ from staff.models import Staff
 #     dataset = Order.objects.all()
 #     data = serializers.serialize('json',dataset)
 
-
+@allowed_users(allowed_roles=['admin','students','trainers'])
 def home(request):
 # Authentication
     # if request.user.is_authenticated:

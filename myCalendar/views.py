@@ -7,6 +7,8 @@ from django.http import HttpResponse
 from django.views import generic
 from django.utils.safestring import mark_safe
 from .forms import EventRegistrationForm
+from landing.decorators import allowed_users
+
 
 from .models import *
 from .utils import Calendar
@@ -26,18 +28,21 @@ class CalendarView(generic.ListView):
         context['next_month'] = next_month(d)
         return context
 
+@allowed_users(allowed_roles=['admin'])
 def get_date(req_day):
     if req_day:
         year, month = (int(x) for x in req_day.split('-'))
         return date(year, month, day=1)
     return datetime.date.today()
 
+@allowed_users(allowed_roles=['admin','students','trainers','staff'])
 def prev_month(d):
     first = d.replace(day=1)
     prev_month = first- timedelta(days=1)
     month = 'month' + str(prev_month.year) + '-' + str(prev_month.month)
     return month
 
+@allowed_users(allowed_roles=['admin','students','trainers','staff'])
 def next_month(d):
     days_in_month = calendar.monthrange(d.year, d.month)[1]
     last = d.replace(day=days_in_month)
@@ -45,6 +50,7 @@ def next_month(d):
     month = 'month' + str(next_month.year) + '-' + str(next_month.month)
     return month
 
+@allowed_users(allowed_roles=['admin','students','trainers'])
 def register_event(request,event_id=None):
     instance = Event()
     if event_id:
@@ -63,6 +69,7 @@ def register_event(request,event_id=None):
             print(form.errors)
     return render(request,'register_event.html',{"form":form})
     
+@allowed_users(allowed_roles=['admin','students','trainers','staff'])
 def event_list(request):
     events = Event.objects.all()
     return render(request, "event_list.html",{"events":events})

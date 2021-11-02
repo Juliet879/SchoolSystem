@@ -23,6 +23,10 @@
                     <input type="password" placeholder="Password" name="password" required><br><br>
                     <a href="page2.html"><button id="btn_signup" type="submit">Login</button></a>
                     <p>{{form.errors}}</p>
+
+                    {% for message in messages %}
+                    <p>{{message}}</p>
+                    {% endfor %}
                     <p id="registerOption">Don't have an account <a id="linking" href="{% url 'register' %}">Register</a></p>
 
                 </section>

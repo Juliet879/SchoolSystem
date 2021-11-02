@@ -1,11 +1,14 @@
 from django.shortcuts import redirect, render
 from .forms import StudentRegistrationForm
 from .models import Student
+from landing.decorators import allowed_users
+
 # from django.http import JsonResponse
 # from django.core import serializers
 # from django.core.files.storage import FileSystemStorage
 
 #Register a new student.
+@allowed_users(allowed_roles=['admin','students'])
 def register_student(request):
     if request.method == "POST":
         form = StudentRegistrationForm(request.POST,request.FILES)
@@ -19,11 +22,13 @@ def register_student(request):
 
 
 #Displaying a list of the student
+@allowed_users(allowed_roles=['admin','students','trainers'])
 def student_list(request):
     students = Student.objects.all()
     return render(request,"student_list.html",{"students":students})
 
 #editing a student
+@allowed_users(allowed_roles=['admin','students'])
 def edit_student(request,id):
     student = Student.objects.get(id=id)
     if request.method =="POST":
@@ -36,12 +41,14 @@ def edit_student(request,id):
     return render(request,'edit_student.html',{"form":form})
 
 #single instance view
+@allowed_users(allowed_roles=['admin','students','trainers'])
 def student_profile(request,id):
     student = Student.objects.get(id=id)
     return render(request,'student_profile.html',{"student":student})
 
 
 #delete a student
+@allowed_users(allowed_roles=['admin'])
 def delete_student(request,id):
     try:
         student = Student.objects.get(id=id)

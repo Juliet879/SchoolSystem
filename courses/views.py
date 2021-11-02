@@ -1,8 +1,10 @@
 from django.shortcuts import render
 from .forms import CourseRegistrationForm
 from .models import Course
+from landing.decorators import allowed_users
 
 # Create your views here.
+@allowed_users(allowed_roles=['admin'])
 def add_course(request):
     if request.method == "POST":
         form = CourseRegistrationForm(request.POST,request.FILES)
@@ -14,10 +16,12 @@ def add_course(request):
         form = CourseRegistrationForm()
     return render(request,'course.html',{"form":form})
     
+@allowed_users(allowed_roles=['admin','students','trainers'])
 def course_list(request):
     courses = Course.objects.all()
     return render(request, "course_list.html",{"courses":courses})
 
+@allowed_users(allowed_roles=['admin','trainers'])
 def edit_course(request,id):
     course = Course.objects.get(id=id)
     if request.method =="POST":
